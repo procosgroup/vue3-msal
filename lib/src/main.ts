@@ -191,7 +191,8 @@ export class MSAL implements MSALBasic {
         if (!errorCode || !errorCode.length) {
             return false;
         }
-        return errorCode === "consent_required" ||
+        return errorCode === "no_account_error" ||
+            errorCode === "consent_required" ||
             errorCode === "interaction_required" ||
             errorCode === "login_required";
     }
